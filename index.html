@@ -594,17 +594,6 @@ mousePressed = function(){
 		var r = 255;
 		var g = 90;
 		var b = 0;
-		for (var i=0;i<360;i+=30){
-		   fill(r, g, b); 
-		   r -= 21;
-		   g += 13;
-		   b += 21;
-		pushMatrix();
-		translate(200,200);
-		rotate(i);
-		rect(0, 0, 150, 15);
-		popMatrix();
-		}
 		noStroke();
 	    
 	    draw();
