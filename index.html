@@ -387,28 +387,7 @@ var startGame = function() {
 startGame();
 
 
-///////////// MAIN GAME LOOP /////////////
 
-var draw = function() {
-    drawBackground(255);
-    drawGrid();
-
-    snake.draw();
-    apple.draw();
-
-    if (!gameOver) {
-        snake.move(apple);
-    } else {
-        drawGameOverScreen();
-        // don't let the user restart the game
-        // until the timer is up
-        if (keyIsPressed && gameOverTimer.isUp()) {
-            startGame();
-        } else {
-            gameOverTimer.decr();
-        }
-    }
-};
 
 /**
 Arrowhead Co. Speaking
@@ -587,6 +566,29 @@ draw = function() {
 mousePressed = function(){
     if(round(Title[1]) === 0){ 
         clique = true;   
+	console.log("Clique no titulo");
+	    ///////////// MAIN GAME LOOP /////////////
+
+var draw = function() {
+    drawBackground(255);
+    drawGrid();
+
+    snake.draw();
+    apple.draw();
+
+    if (!gameOver) {
+        snake.move(apple);
+    } else {
+        drawGameOverScreen();
+        // don't let the user restart the game
+        // until the timer is up
+        if (keyIsPressed && gameOverTimer.isUp()) {
+            startGame();
+        } else {
+            gameOverTimer.decr();
+        }
+    }
+};
     }
 };
 };
