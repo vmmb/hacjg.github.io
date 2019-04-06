@@ -1,5 +1,22 @@
- <script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script> 
+<!DOCTYPE html>
+<html> 
+  <head>
+    <title>JOGOS</title> 
+  </head>
+<div class="header">
+  <h1>Jogos em java script</h1>
+  <p>Projeto HAC da Joana</p>
+</div>	
+	
+  <body>
+	<!--This draws the canvas on the webpage -->
+    <canvas id="mycanvas"></canvas> 
+  </body>
+<script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script> 
 <script>  
+  var programCode = function(processingInstance) {
+    with (processingInstance) {
+      size(1000, 500); 
 /**
  * A Khan Academy version of the classic arcade game
  * "Snake"
@@ -45,7 +62,7 @@ var snake;
 var gameOver; // true when the game is over
 var gameOverTimer;
 
-var height = 100;
+var height = 500;
 // height is the canvas height
 var rowHeight = height / N;
 // keep track of arrow keypresses
@@ -382,4 +399,13 @@ var draw = function() {
         }
     }
 };
-</script>
+ 
+ }};
+
+ // Get the canvas that ProcessingJS will use
+  var canvas = document.getElementById("mycanvas"); 
+  // Pass the function to ProcessingJS constructor
+  var processingInstance = new Processing(canvas, programCode); 
+  </script>
+</html>
+
