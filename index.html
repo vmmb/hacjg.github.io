@@ -386,6 +386,28 @@ var startGame = function() {
 // begin with a new game
 startGame();
 
+///////////// MAIN GAME LOOP /////////////
+
+var draw = function() {
+    drawBackground(255);
+    drawGrid();
+
+    snake.draw();
+    apple.draw();
+
+    if (!gameOver) {
+        snake.move(apple);
+    } else {
+        drawGameOverScreen();
+        // don't let the user restart the game
+        // until the timer is up
+        if (keyIsPressed && gameOverTimer.isUp()) {
+            startGame();
+        } else {
+            gameOverTimer.decr();
+        }
+    }
+};
 
 
 
@@ -567,28 +589,25 @@ mousePressed = function(){
     if(round(Title[1]) === 0){ 
         clique = true;   
 	console.log("Clique no titulo");
-	    ///////////// MAIN GAME LOOP /////////////
-
-var draw = function() {
-    drawBackground(255);
-    drawGrid();
-
-    snake.draw();
-    apple.draw();
-
-    if (!gameOver) {
-        snake.move(apple);
-    } else {
-        drawGameOverScreen();
-        // don't let the user restart the game
-        // until the timer is up
-        if (keyIsPressed && gameOverTimer.isUp()) {
-            startGame();
-        } else {
-            gameOverTimer.decr();
-        }
-    }
-};
+	     noStroke();
+		background(0, 0, 0);
+		var r = 255;
+		var g = 90;
+		var b = 0;
+		for (var i=0;i<360;i+=30){
+		   fill(r, g, b); 
+		   r -= 21;
+		   g += 13;
+		   b += 21;
+		pushMatrix();
+		translate(200,200);
+		rotate(i);
+		rect(0, 0, 150, 15);
+		popMatrix();
+		}
+		noStroke();
+	    
+	    draw();
     }
 };
 };
