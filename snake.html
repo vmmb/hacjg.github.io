@@ -9,8 +9,12 @@
 </div>	
 	
   <body>
+	  <button onclick="restart()">
+		  Restart
+	  </button>
 	<!--This draws the canvas on the webpage -->
     <canvas id="mycanvas"></canvas> 
+	 
   </body>
 <script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script> 
 <script>  
@@ -36,7 +40,7 @@
 ///////////// SETTINGS /////////////
 
 // number of {rows|columns}
-var N = 20;
+var N = 50;
 
 // starting length of snake
 // click "Restart" if you change this
@@ -89,7 +93,7 @@ var images = [oldspice, mrpink, marcimus,
 var randomInt = function(min, max) {
     var num = random(min, max);
     return floor(num);
-};
+}
 
 // a generic timer function
 var Timer = function(limit) {
@@ -379,6 +383,10 @@ startGame();
 
 ///////////// MAIN GAME LOOP /////////////
 
+	    var restart = function(){
+	    startGame();
+	    };
+	    
 var draw = function() {
     drawBackground(255);
     drawGrid();
