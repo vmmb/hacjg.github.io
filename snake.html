@@ -383,11 +383,7 @@ startGame();
 
 ///////////// MAIN GAME LOOP /////////////
 
-	    var restart = function(){
-		    console.log("restart");
-		    START_LENGTH = 1;
-	    startGame();
-	    };
+
 	    
 var draw = function() {
     drawBackground(255);
@@ -416,6 +412,11 @@ var draw = function() {
   var canvas = document.getElementById("mycanvas"); 
   // Pass the function to ProcessingJS constructor
   var processingInstance = new Processing(canvas, programCode); 
+	var restart = function(){
+		    console.log("restart");
+		    START_LENGTH = 1;
+	    //startGame();
+	    };
   </script>
 </html>
 
